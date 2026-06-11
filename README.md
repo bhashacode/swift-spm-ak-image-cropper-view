@@ -2,26 +2,19 @@
 
 > Responsive image cropper
 
-[![Carthage compatible][carthage-bage]][carthage-bage] 
-[![CocoaPods Compatible][pods-bage]][pods-bage]
+[![Swift Package Manager][spm-badge]][spm-url]
+[![Platform][platform-badge]][platform-url]
+[![Swift Version][swift-badge]][swift-url]
+[![License][license-badge]][license-url]
 
-[![Platform][platform-bage]][platform-bage]
-[![Swift Version][swift-bage]][swift-url]
-[![Build Status][travis-bage]][travis-url]
-[![License][license-bage]][license-url]
-
-[pods-bage]: https://img.shields.io/badge/COCOAPODS-compatible-fb0006.svg
-[pods-url]: https://cocoapods.org/
-[carthage-bage]: https://img.shields.io/badge/Carthage-compatible-brightgreen.svg
-[carthage-url]: https://github.com/Carthage/Carthage
-[platform-bage]: https://img.shields.io/cocoapods/p/LFAlertController.svg
-[platform-url]: http://cocoapods.org/pods/LFAlertController
-[swift-bage]:https://img.shields.io/badge/swift-5.0-orange.svg
+[spm-badge]: https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg
+[spm-url]: https://swift.org/package-manager/
+[platform-badge]: https://img.shields.io/badge/platform-iOS%2015.6%2B-lightgrey.svg
+[platform-url]: https://developer.apple.com/ios/
+[swift-badge]: https://img.shields.io/badge/swift-5.7%2B-orange.svg
 [swift-url]: https://swift.org/
-[license-bage]: https://img.shields.io/badge/License-MIT-blue.svg
+[license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
-[travis-bage]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 
 Image cropping plugin which supported different devices orientation. Easy to set up and configure. Has many settings for flexible integration into your project. Behavior is similar to native iOS photo cropper.
 
@@ -38,60 +31,31 @@ Image cropping plugin which supported different devices orientation. Easy to set
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 7.3
+- iOS 15.6+
+- Xcode 14 or newer
+- Swift 5.7 or newer
 
 ## Installation
 
-### CocoaPods
+### Swift Package Manager
 
-[CocoaPods][] is a dependency manager for Cocoa projects. To install **AKImageCropperView** with CocoaPods:
+In Xcode:
 
- 1. Make sure CocoaPods is [installed][CocoaPods Installation].
+1. Open your project.
+2. Go to File > Add Package Dependencies.
+3. Enter this repository URL.
+4. Select the required version, branch, or commit. If this fork does not have a release tag yet, select the branch or commit you want to track.
+5. Add the `AKImageCropperView` package product to your app target.
 
- 2. Update your Podfile to include the following:
+Minimum supported iOS version: 15.6.
 
-``` ruby
-use_frameworks!
-pod 'AKImageCropperView'
+Then import the module where needed:
+
+```swift
+import AKImageCropperView
 ```
 
- 3. Run `pod install`.
-
-[CocoaPods]: https://cocoapods.org
-[CocoaPods Installation]: https://guides.cocoapods.org/using/getting-started.html#getting-started
- 
- 4. In your code import **AKImageCropperView** like so: `import AKImageCropperView`
-
-### Carthage
-
-[Carthage][] is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-To install **AKImageCropperView** with Carthage:
-
-1. Install Carthage via [Homebrew][]
-
-	```bash
-	$ brew update
-	$ brew install carthage
-	```
-
-2. Add `github "artemkrachulov/AKImageCropperView"` to your Cartfile.
-
-3. Run `carthage update`.
-
-4. Drag `AKMaskField.framework ` from the `Carthage/Build/iOS/` directory to the `Linked Frameworks and Libraries` section of your Xcode project’s `General` settings.
-
-5. Add `$(SRCROOT)/Carthage/Build/iOS/AKImageCropperView.framework ` to `Input Files` of Run Script Phase for Carthage.
-
-[Carthage]: https://github.com/Carthage/Carthage
-[Homebrew]: http://brew.sh
-
-### Manual
-
-If you prefer not to use either of the aforementioned dependency managers, you can integrate **AKImageCropperView** into your project manually.
-
-1. Download and drop **AKImageCropperView** folder in your project.
-2. Done!
+This fork is Swift Package Manager-only. CocoaPods and Carthage integration files and installation paths are intentionally not supported.
 
 ## Usage example
 
@@ -121,7 +85,7 @@ override func viewDidLoad() {
 }
 ```
 
-> Full examples with constraint, delegates and Overlay view configuration check in demo project.
+> Additional sample controller source is available in `AKImageCropperViewExample/`.
 > 
 > **NOTE**: If after cropper view initialization your image has top inset. Go to storyboard with your scene and in the attributes inspector, uncheck 'Adjust Scrollview Insets'.
 
