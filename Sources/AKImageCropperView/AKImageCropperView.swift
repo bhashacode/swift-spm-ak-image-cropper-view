@@ -784,7 +784,7 @@ open class AKImageCropperView: UIView, UIScrollViewDelegate, UIGestureRecognizer
 
 //  MARK: - AKImageCropperViewDelegate
 
-public protocol AKImageCropperViewDelegate : class {
+public protocol AKImageCropperViewDelegate: AnyObject {
     
     /**
      Tells the delegate that crop frame was changed.
